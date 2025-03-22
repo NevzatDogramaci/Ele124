@@ -10,22 +10,32 @@ int main (void)
 
 
 
-    return 0 ;
-}
+    return 0 ; //Succesfully terminate 
+} //End of the main function
+
 void computeHomeValue (void)
 {
-    int popularity, size; 
+    int popularity, size;  //Define variables
     int homeValue;
 
-    printf( " Enter popularity : \n" );
-    scanf( "%d", &popularity );
+    printf("Enter popularity : \n");  //Enter 1
+    scanf( "%d", &popularity );  //Prompt 1
 
-    printf(" Enter size : \n");
-    scanf("%d", &size);
+    printf("Enter size : \n");  //Enter 2
+    scanf("%d", &size);  //Prompt 2
 
-    homeValue = ( pow( popularity,3 ) + pow( size, 2 ) ) * 1000;
+    homeValue = ( (pow(popularity,3) + pow(size, 2))* 10000 );  //Calculate home value
 
-    printf(" \n Home Value : %d \n ", homeValue);
-
-
+    printf("\nHome Value : %d \n", homeValue);  //Print the computed home value on the screen
 }
+
+/*Program started
+
+Enter popularity : 
+5
+Enter size : 
+2
+ 
+Home Value : 1290000 
+
+Program ended*/
