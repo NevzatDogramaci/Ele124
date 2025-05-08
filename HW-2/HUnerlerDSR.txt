@@ -1,0 +1,104 @@
+Item 1 is $ 5.39
+Item 2 is $ 6.97
+Item 3 is $16.95
+Item 4 is $11.20
+Item 5 is $17.97
+Item 6 is $16.10
+Item 7 is $18.37
+Item 8 is $17.09
+Item 9 is $ 7.84
+Item 10 is $ 5.15
+Item 11 is $ 5.22
+Item 12 is $18.44
+Item 13 is $18.68
+Item 14 is $13.91
+Item 15 is $ 4.96
+Item 16 is $11.64
+Item 17 is $ 1.12
+Item 18 is $10.38
+Item 19 is $11.56
+Item 20 is $18.52
+Item 21 is $ 6.81
+Item 22 is $ 7.26
+Item 23 is $18.60
+Item 24 is $19.63
+Item 25 is $ 3.54
+Item 26 is $ 2.95
+Item 27 is $ 6.34
+Item 28 is $ 3.74
+Item 29 is $19.89
+Item 30 is $ 4.67
+Item 31 is $ 4.22
+Item 32 is $10.10
+Item 33 is $19.53
+Item 34 is $16.62
+Item 35 is $19.64
+Item 36 is $ 8.19
+Item 37 is $ 1.25
+Item 38 is $ 7.54
+Item 39 is $ 6.81
+Item 40 is $ 9.88
+Item 41 is $ 1.87
+Item 42 is $10.14
+Item 43 is $ 8.28
+Item 44 is $15.92
+Item 45 is $10.40
+Item 46 is $ 1.76
+Item 47 is $ 8.82
+Item 48 is $12.72
+Item 49 is $18.12
+Item 50 is $15.93
+Total profit kept by store: $511.00
+Total donated to university: $27.63
+Item 1 is $ 5.85
+Item 2 is $13.35
+Item 3 is $16.49
+Item 4 is $ 3.26
+Item 5 is $11.29
+Item 6 is $10.48
+Item 7 is $ 6.44
+Item 8 is $ 2.63
+Item 9 is $ 5.70
+Item 10 is $ 7.46
+Item 11 is $ 4.51
+Item 12 is $ 4.60
+Item 13 is $ 9.00
+Item 14 is $16.64
+Item 15 is $ 2.74
+Item 16 is $ 5.21
+Item 17 is $11.16
+Item 18 is $ 8.48
+Item 19 is $ 0.18
+Item 20 is $15.17
+Item 21 is $ 6.58
+Item 22 is $ 0.83
+Item 23 is $14.59
+Item 24 is $18.64
+Item 25 is $ 1.87
+Item 26 is $12.78
+Item 27 is $ 0.42
+Item 28 is $16.58
+Item 29 is $ 0.50
+Item 30 is $ 9.46
+Item 31 is $16.68
+Item 32 is $ 0.13
+Item 33 is $ 3.79
+Item 34 is $12.81
+Item 35 is $ 0.41
+Item 36 is $10.45
+Item 37 is $ 9.05
+Item 38 is $16.83
+Item 39 is $12.51
+Item 40 is $ 2.95
+Item 41 is $13.45
+Item 42 is $ 6.96
+Item 43 is $14.57
+Item 44 is $ 0.08
+Item 45 is $ 7.17
+Item 46 is $ 6.70
+Item 47 is $11.28
+Item 48 is $13.51
+Item 49 is $ 3.41
+Item 50 is $18.93
+Total profit kept by store: $399.00
+Total donated to university: $25.56
