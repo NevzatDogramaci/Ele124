@@ -10,7 +10,7 @@ typedef struct
 } WordFrequency; // it keeps each different word in its structure
 
 // function prototype
-int ReadAndClean   ( FILE* fp , char c[] );  // The word is converted to a lowercase letter and punctuation marks are discarded
+int ReadAndClean   ( FILE* fp , char **c );  // The word is converted to a lowercase letter and punctuation marks are discarded
 void ListAndPrint  ( WordFrequency *wordArray , int N );   //Sorted and printed alphabetically or by frequency
 void cleanMemory   (WordFrequency x[], int N);
 int  FindIndex     ( WordFrequency *wordArray , char *c , int N );
@@ -30,15 +30,17 @@ int main()
         return 0;
     }
 
-	char word[200];
-    while ( ReadAndClean ( fp , word ) )
+	char *word;
+    while ( ReadAndClean ( fp , &word ) )
     {
-    	if (strlen ( word ) == 0 )
-            continue;
-
         int indx = FindIndex ( wordArray , word , wordCount);
+
         if ( indx != -1 )
+        {
             wordArray[indx].frequency++;
+            free ( word );
+
+        }
 
         else
         {
@@ -46,18 +48,11 @@ int main()
             if ( wordArray == NULL )
             {
                 printf( "Memory allocation failed" );
+                free ( word );
                 cleanMemory ( wordArray , wordCount );
                 return 0;
             }
-
-            wordArray[wordCount].word = ( char* ) calloc ( strlen ( word) + 1 , sizeof (char) );
-            if ( wordArray[wordCount].word == NULL )
-            {
-                printf( "Memory allocation failed" );
-                cleanMemory ( wordArray , wordCount );
-                return 0;
-            }
-            strcpy ( wordArray[wordCount].word , word );
+            wordArray[wordCount].word = word;
             wordArray[wordCount].frequency = 1;
             wordCount++;
         }
@@ -70,26 +65,51 @@ int main()
     return 0;
 }
 
-int ReadAndClean ( FILE* fp , char c[] )
+int ReadAndClean( FILE *fp, char **c )
 {
-	if ( fscanf ( fp, "%s", c ) == EOF ) // in each cycle, the words are assigned to word
- 		return 0;
+    int ch;
+    int i = 0;
+    int size = 20;
 
-    char temp[200];
-    int i = 0, j = 0;
-
-    while ( c[i] != '\0' )
+    *c = (char *) malloc ( size * sizeof (char) );
+    if ( *c == NULL )
     {
-        if ( isalnum ( c[i] ) ) // Only letters are taken and converted to lowercase before being assigned
-        {
-            temp [j++] = tolower ( c[i] );
-        }
-        i++;
+        return 0;
     }
-    temp [j] = '\0';
 
-    strcpy ( c , temp ); // The temporary array is copied into the original array
-	return 1;
+    while ((ch = fgetc(fp)) != EOF)         // retrieves all characters until the end of the file
+    {
+        if (isalpha(ch))
+        {
+            if ( i > ( size - 1 ) )             // sufficient memory allocation block
+            {
+                size++;
+                *c = ( char* ) realloc ( *c, size * sizeof (char) );
+
+                if ( *c == NULL )
+                {
+                    free ( *c );
+                    return 0;
+                }
+            }
+            (*c)[i++] = tolower(ch);
+        }
+
+        else if (i > 0)         //break the loop if it is not alphanumeric
+        {
+            break;
+        }
+
+    }
+    (*c)[i] = '\0';         // for strcmp
+
+    if (i == 0 && ch == EOF)
+    {
+        free ( *c );
+        return 0;
+    }
+
+    return 1;
 }
 
 void ListAndPrint  ( WordFrequency x[] , int N )
@@ -151,9 +171,9 @@ void cleanMemory(WordFrequency *wordArray, int N)
 {
     for (int i = 0; i < N; i++)
     {
-        free(wordArray[i].word);
+        free(wordArray[i].word);     // the space allocated for each word is deleted
     }
-    free(wordArray);
+    free(wordArray);        // the space allocated for the entire structure is deleted
 }
 int FindIndex ( WordFrequency *wordArray , char *c , int N )
 {
