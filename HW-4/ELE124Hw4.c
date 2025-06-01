@@ -71,7 +71,7 @@ int ReadAndClean( FILE *fp, char **c )
     int i = 0;
     int size = 20;
 
-    *c = (char *) malloc ( size * sizeof (char) );
+    *c = (char *) calloc(size, sizeof(char));
     if ( *c == NULL )
     {
         return 0;
